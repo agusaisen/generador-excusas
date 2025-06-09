@@ -8,7 +8,7 @@ Este proyecto es una pequeña aplicación que genera excusas de forma aleatoria.
 
 ## 🔧 Tecnologías utilizadas
 
--nextjs
+Incluye Next.js, React y Tailwind CSS
 
 ## 🖱️ Cómo usarlo
 
