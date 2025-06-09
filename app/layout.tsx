@@ -35,8 +35,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo-excusas-online.png" />
-      </head>
-      <body>
         {/* Google AdSense Script */}
         <Script
           async
@@ -44,8 +42,8 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        {children}
-      </body>
+      </head>
+      <body>{children}</body>
     </html>
   )
 }
