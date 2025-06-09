@@ -85,13 +85,13 @@ export default function ExcuseGenerator() {
 
   const compartirEnX = () => {
     if (!excusaActual) return
-    const texto = encodeURIComponent(`"${excusaActual}" - Generada con el Generador de Excusas`)
+    const texto = encodeURIComponent(`"${excusaActual}" - Generada en Excusas Online - www.excusas.online`)
     window.open(`https://twitter.com/intent/tweet?text=${texto}`, "_blank")
   }
 
   const compartirEnWhatsApp = () => {
     if (!excusaActual) return
-    const texto = encodeURIComponent(`"${excusaActual}" - Generada con el Generador de Excusas`)
+    const texto = encodeURIComponent(`"${excusaActual}" - Generada  en Excusas Online - www.excusas.online`)
     window.open(`https://wa.me/?text=${texto}`, "_blank")
   }
 
@@ -128,10 +128,10 @@ export default function ExcuseGenerator() {
               darkMode ? "text-white" : "text-slate-800",
             )}
           >
-            Generador de Excusas
+            Excusas Online
           </h1>
           <p className={cn("text-lg", darkMode ? "text-slate-300" : "text-slate-600")}>
-            Para cuando necesitas una salida creativa
+            Generador de excusas para cuando necesitas una salida creativa
           </p>
         </div>
 
