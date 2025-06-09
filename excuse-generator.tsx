@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
-import { Copy, Twitter, MessageCircle, Moon, Sun } from "lucide-react"
+import { Copy, Twitter, MessageCircle, Moon, Sun, Send, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { sendExcuseEmail } from "./actions/send-excuse"
 
 // Excusas organizadas por nivel de creatividad
 const excusasPorNivel = {
@@ -49,6 +50,10 @@ export default function ExcuseGenerator() {
   const [nivelCreatividad, setNivelCreatividad] = useState(1)
   const [darkMode, setDarkMode] = useState(false)
   const [animateExcuse, setAnimateExcuse] = useState(false)
+  const [nuevaExcusa, setNuevaExcusa] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState("")
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   // Determinar nivel de creatividad basado en el slider
   const getNivelTexto = () => {
@@ -97,6 +102,33 @@ export default function ExcuseGenerator() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
+  }
+
+  const handleSubmitExcuse = async (formData: FormData) => {
+    setIsSubmitting(true)
+    setSubmitMessage("")
+
+    try {
+      const result = await sendExcuseEmail(formData)
+
+      setSubmitMessage(result.message)
+      setSubmitSuccess(result.success)
+
+      if (result.success) {
+        setNuevaExcusa("")
+      }
+    } catch (error) {
+      setSubmitMessage("Hubo un error al enviar la excusa. Intentá de nuevo.")
+      setSubmitSuccess(false)
+    } finally {
+      setIsSubmitting(false)
+
+      // Limpiar mensaje después de 5 segundos
+      setTimeout(() => {
+        setSubmitMessage("")
+        setSubmitSuccess(false)
+      }, 5000)
+    }
   }
 
   // Efecto para resetear la animación cuando cambia la excusa
@@ -226,6 +258,88 @@ export default function ExcuseGenerator() {
             <MessageCircle className="mr-2 h-4 w-4" />
             WhatsApp
           </Button>
+        </div>
+
+        {/* Sección para agregar nueva excusa */}
+        <div
+          className={cn(
+            "mt-10 p-6 rounded-xl border transition-all duration-300",
+            darkMode ? "bg-slate-700/30 border-slate-600" : "bg-blue-50/50 border-blue-200",
+          )}
+        >
+          <h3 className={cn("text-lg font-semibold mb-4 text-center", darkMode ? "text-slate-200" : "text-slate-700")}>
+            ¿Tenés una excusa copada? Dejala acá
+          </h3>
+
+          <form action={handleSubmitExcuse} className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="text"
+                name="excuse"
+                value={nuevaExcusa}
+                onChange={(e) => setNuevaExcusa(e.target.value)}
+                placeholder="Escribí tu excusa genial aquí... (mín. 10 caracteres)"
+                className={cn(
+                  "flex-1 px-4 py-3 rounded-lg border transition-colors duration-200",
+                  darkMode
+                    ? "bg-slate-800 border-slate-600 text-slate-200 placeholder-slate-400 focus:border-indigo-400"
+                    : "bg-white border-slate-300 text-slate-700 placeholder-slate-500 focus:border-indigo-500",
+                )}
+                disabled={isSubmitting}
+                required
+                minLength={10}
+                maxLength={500}
+              />
+
+              <Button
+                type="submit"
+                disabled={!nuevaExcusa.trim() || nuevaExcusa.trim().length < 10 || isSubmitting}
+                className={cn(
+                  "px-6 py-3 transition-all duration-300",
+                  darkMode
+                    ? "bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700"
+                    : "bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600",
+                )}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Mail className="mr-2 h-4 w-4 animate-pulse" />
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <Send className="mr-2 h-4 w-4" />
+                    Enviar
+                  </>
+                )}
+              </Button>
+            </div>
+
+            {submitMessage && (
+              <div
+                className={cn(
+                  "mt-3 p-3 rounded-lg text-center text-sm animate-bounce-once",
+                  submitSuccess
+                    ? darkMode
+                      ? "bg-green-900/50 text-green-300 border border-green-700"
+                      : "bg-green-100 text-green-700 border border-green-200"
+                    : darkMode
+                      ? "bg-red-900/50 text-red-300 border border-red-700"
+                      : "bg-red-100 text-red-700 border border-red-200",
+                )}
+              >
+                {submitMessage}
+              </div>
+            )}
+          </form>
+
+          <div className={cn("mt-3 text-xs text-center space-y-1", darkMode ? "text-slate-400" : "text-slate-500")}>
+            <p className="flex items-center justify-center gap-1">
+              <Mail className="h-3 w-3" />
+              Tu excusa será enviada a excusasonline@gmail.com
+            </p>
+            <p>📝 Entre 10 y 500 caracteres</p>
+          </div>
         </div>
 
         {/* Footer con modo oscuro */}
