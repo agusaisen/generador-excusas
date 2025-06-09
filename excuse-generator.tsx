@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch"
 import { Copy, Twitter, MessageCircle, Moon, Sun, Send, Mail } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { sendExcuseEmail } from "./actions/send-excuse"
+import Image from "next/image"
 
 // Excusas organizadas por nivel de creatividad
 const excusasPorNivel = {
@@ -151,18 +152,21 @@ export default function ExcuseGenerator() {
           darkMode ? "bg-slate-800 border-slate-700" : "bg-white/90 backdrop-blur-sm",
         )}
       >
-        {/* Hero simpático */}
+        {/* Hero simpático con logo */}
         <div className="text-center mb-10">
-          <div className="text-6xl mb-4">🤷‍♂️</div>
-          <h1
-            className={cn(
-              "text-4xl md:text-5xl font-bold mb-3 tracking-tight",
-              darkMode ? "text-white" : "text-slate-800",
-            )}
-          >
-            Excusas Online
-          </h1>
-          <p className={cn("text-lg", darkMode ? "text-slate-300" : "text-slate-600")}>
+          <div className="flex justify-center mb-2">
+            <div className="relative w-80 h-80">
+              <Image
+                src="/logo-excusas-online.png"
+                alt="Logo de Excusas Online"
+                fill
+                priority
+                className="object-contain"
+              />
+            </div>
+          </div>
+
+          <p className={cn("text-mb", darkMode ? "text-slate-300" : "text-slate-600")}>
             Generador de excusas para cuando necesitas una salida creativa
           </p>
         </div>
@@ -334,7 +338,6 @@ export default function ExcuseGenerator() {
           </form>
 
           <div className={cn("mt-3 text-xs text-center space-y-1", darkMode ? "text-slate-400" : "text-slate-500")}>
-           
             <p>📝 Entre 10 y 500 caracteres</p>
           </div>
         </div>
