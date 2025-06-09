@@ -334,10 +334,7 @@ export default function ExcuseGenerator() {
           </form>
 
           <div className={cn("mt-3 text-xs text-center space-y-1", darkMode ? "text-slate-400" : "text-slate-500")}>
-            <p className="flex items-center justify-center gap-1">
-              <Mail className="h-3 w-3" />
-              Tu excusa será enviada a excusasonline@gmail.com
-            </p>
+           
             <p>📝 Entre 10 y 500 caracteres</p>
           </div>
         </div>
