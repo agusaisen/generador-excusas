@@ -193,7 +193,7 @@ export default function ExcuseGenerator() {
           <div className="flex justify-center mb-2">
             <div className="relative w-80 h-80">
               <Image
-                src="/logo-excusas-online.png"
+                src="/logo-excusas-online.webp"
                 alt="Logo de Excusas Online"
                 fill
                 priority
@@ -221,6 +221,7 @@ export default function ExcuseGenerator() {
             value={[nivelCreatividad]}
             onValueChange={(value) => setNivelCreatividad(value[0])}
             className={darkMode ? "py-4" : "py-4"}
+            name="slider-modo"
           />
           <div className="text-center mt-1">
             <span
@@ -236,6 +237,7 @@ export default function ExcuseGenerator() {
 
         {/* Botón enorme */}
         <Button
+          name="btn-generar"
           onClick={generarExcusa}
           disabled={isGenerating}
           className={cn(

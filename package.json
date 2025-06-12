@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@radix-ui/react-slider": "^1.1.2",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-switch": "^1.0.3",
+    "@radix-ui/react-slider": "latest",
+    "@radix-ui/react-slot": "latest",
+    "@radix-ui/react-switch": "latest",
     "@types/nodemailer": "^6.4.14",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",
     "next": "14.2.16",
+    "next-themes": "latest",
     "nodemailer": "latest",
     "react": "^18",
     "react-dom": "^18",
