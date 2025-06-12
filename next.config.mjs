@@ -9,6 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    legacyBrowsers: false, // Evita incluir JS para navegadores viejos como IE11
+  },
 }
 
 export default nextConfig
