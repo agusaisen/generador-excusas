@@ -188,7 +188,6 @@ export default function ExcuseGenerator() {
           darkMode ? "bg-slate-800 border-slate-700" : "bg-white/90 backdrop-blur-sm",
         )}
       >
-        {/* Hero simpático con logo */}
         <div className="text-center mb-10">
           <div className="flex justify-center mb-2">
             <div className="relative w-80 h-80">
@@ -198,6 +197,9 @@ export default function ExcuseGenerator() {
                 fill
                 priority
                 className="object-contain"
+             width={100}
+              height={100}
+            
               />
             </div>
           </div>
@@ -250,24 +252,24 @@ export default function ExcuseGenerator() {
           {isGenerating ? "Pensando..." : "¡Dame una excusa!"}
         </Button>
 
-        {/* Resultado con animación */}
-        <div
-          className={cn(
-            "mt-8 p-6 rounded-xl border transition-all duration-300",
-            darkMode ? "bg-slate-700/50 border-slate-600" : "bg-slate-50 border-slate-200",
-            !excusaActual && "opacity-50",
-          )}
-        >
-          <p
-            className={cn(
-              "text-xl text-center transition-all duration-500",
-              animateExcuse ? "animate-bounce-once" : "",
-              darkMode ? "text-slate-200" : "text-slate-700",
-            )}
-          >
-            {excusaActual || "Tu excusa aparecerá aquí..."}
-          </p>
-        </div>
+        {/* Resultado con animación */} 
+<div
+  className={cn(
+    "mt-8 p-6 rounded-xl border transition-all duration-300 min-h-[120px]",
+    darkMode ? "bg-slate-700/50 border-slate-600" : "bg-slate-50 border-slate-200",
+    !excusaActual && "opacity-50",
+  )}
+>
+  <p
+    className={cn(
+      "text-xl text-center transition-all duration-500",
+      animateExcuse ? "animate-bounce-once" : "",
+      darkMode ? "text-slate-200" : "text-slate-700",
+    )}
+  >
+    {excusaActual || "Tu excusa aparecerá aquí..."}
+  </p>
+</div>
 
         {/* Botones de acción */}
         <div className="mt-6 flex flex-wrap gap-3 justify-center">
