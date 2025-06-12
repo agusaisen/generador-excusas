@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   other: {
     "google-adsense-account": "ca-pub-8592906361390983",
   },
-    generator: 'v0.dev'
+    generator: 'Agustín Aisen'
 }
 
 export default function RootLayout({
@@ -39,8 +39,8 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo-excusas-online.png" />
         {/* Google AdSense Script */}
         <script
-            strategy="lazyOnload"
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8592906361390983"
+                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8592906361390983"
+                      strategy="lazyOnload"
           crossOrigin="anonymous"
         />
       </head>
