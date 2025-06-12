@@ -197,8 +197,8 @@ export default function ExcuseGenerator() {
                 fill
                 priority
                 className="object-contain"
-             width={100}
-              height={100}
+             width={250}
+              height={250}
             
               />
             </div>

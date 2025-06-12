@@ -39,7 +39,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/logo-excusas-online.png" />
         {/* Google AdSense Script */}
         <script
-          async
+            strategy="lazyOnload"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8592906361390983"
           crossOrigin="anonymous"
         />
