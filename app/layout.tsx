@@ -43,6 +43,10 @@ export default function RootLayout({
                       strategy="lazyOnload"
           crossOrigin="anonymous"
         />
+          {/* Adsterra Script */}
+        <script
+              async="async" data-cfasync="false" src="//pl26906456.profitableratecpm.com/c71edc91f8cbb4a6b12656ad7c672953/invoke.js"
+        />
       </head>
       <body>{children}</body>
     </html>
