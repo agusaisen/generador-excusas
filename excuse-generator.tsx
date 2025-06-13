@@ -396,6 +396,12 @@ export default function ExcuseGenerator() {
             <Moon className={cn("h-4 w-4 ml-2", darkMode ? "text-indigo-300" : "text-slate-400")} />
           </div>
         </div>
+          <div className="text-center mb-10"></div>
+        <div className="text-center mb-10">
+          <p className={cn("text-mb", darkMode ? "text-slate-300" : "text-slate-600")}>
+            Publicidad que ayuda a mantener este sitio activo:
+          </p>
+      </div>
         <div id="container-c71edc91f8cbb4a6b12656ad7c672953"></div>
         
       </Card>
