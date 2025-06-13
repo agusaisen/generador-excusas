@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
-
+import Script from 'next/script';
 export const metadata: Metadata = {
   title: "Excusas Online - Generador de excusas creativas",
   description: "Generador de excusas creativas para cuando necesitas una salida rápida y divertida",
