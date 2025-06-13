@@ -44,9 +44,10 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
        {/* Adsterra Script */}
-        <script
-                type='text/javascript' src='//pl26906591.profitableratecpm.com/92/11/a3/9211a3ee111d63563b5d453a0f90c735.js'
-        />
+       
+         <script
+                sync="async" data-cfasync="false" src="//pl26906456.profitableratecpm.com/c71edc91f8cbb4a6b12656ad7c672953/invoke.js"
+                 />
       </head>
       <body>{children}</body>
     </html>
