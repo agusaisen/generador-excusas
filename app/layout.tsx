@@ -48,12 +48,7 @@ export default function RootLayout({
          <script
                 sync="async" data-cfasync="false" src="//pl26906456.profitableratecpm.com/c71edc91f8cbb4a6b12656ad7c672953/invoke.js"
                  />
-                   <script
-              type='text/javascript' src='//pl26906591.profitableratecpm.com/92/11/a3/9211a3ee111d63563b5d453a0f90c735.js'
-                 />
-                  <script
-             type='text/javascript' src='//pl26906708.profitableratecpm.com/b7/c1/b8/b7c1b8d2a783d483a97902b50a189aa8.js'
-                 />
+               
       </head>
       <body>{children}</body>
     </html>
