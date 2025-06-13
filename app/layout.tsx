@@ -53,31 +53,8 @@ export default function RootLayout({
       <body>
       {children}
         {/* Script Adsterra */}
-        <Script
-          id="adsterra-params1"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              atOptions = {
-                'key' : '4f7ff2adcae5d620410f19c3ac77ccf9',
-                'format' : 'iframe',
-                'height' : 50,
-                'width' : 320,
-                'params' : {}
-              };
-            `,
-          }}
-        />
-
-        <Script
-          id="adsterra-script1"
-          strategy="afterInteractive"
-          src="//www.highperformanceformat.com/4f7ff2adcae5d620410f19c3ac77ccf9/invoke.js"
-        />
-
-
-         <Script
-          id="adsterra-params2"
+                <Script
+          id="adsterra-params"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -93,7 +70,7 @@ export default function RootLayout({
         />
 
         <Script
-          id="adsterra-script2"
+          id="adsterra-script"
           strategy="afterInteractive"
           src="//www.highperformanceformat.com/0d3d88a411ab4f1d8b8b6f12c21417b6/invoke.js"
         />
