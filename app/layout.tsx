@@ -50,22 +50,30 @@ export default function RootLayout({
                  />
                
       </head>
-      <body>{children}
-       {/* Adsterra Script */}
-       
-         <script
-                type="text/javascript">
-	atOptions = {
-		'key' : '4f7ff2adcae5d620410f19c3ac77ccf9',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-                 />
-                  <script
-             type="text/javascript" src="//www.highperformanceformat.com/4f7ff2adcae5d620410f19c3ac77ccf9/invoke.js"
-                 />
+      <body>
+      {children}
+        {/* Script Adsterra */}
+        <Script
+          id="adsterra-params"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              atOptions = {
+                'key' : '4f7ff2adcae5d620410f19c3ac77ccf9',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            `,
+          }}
+        />
+
+        <Script
+          id="adsterra-script"
+          strategy="afterInteractive"
+          src="//www.highperformanceformat.com/4f7ff2adcae5d620410f19c3ac77ccf9/invoke.js"
+        />
                  </body>
     </html>
   )
