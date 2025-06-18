@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
   },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not dead"
+  ],
   "dependencies": {
     "@radix-ui/react-slider": "latest",
     "@radix-ui/react-slot": "latest",
@@ -34,10 +39,5 @@
     "eslint-config-next": "14.0.0",
     "postcss": "^8.5",
     "typescript": "^5"
-  },
-  "browserslist": [
-    "defaults",
-    "not IE 11",
-    "not dead"
-  ]
+  }
 }
