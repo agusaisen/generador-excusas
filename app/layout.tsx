@@ -37,6 +37,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/logo-excusas-online.png" />
+        <link rel="canonical" href="https://www.excusas.online/">
         {/* Google AdSense Script */}
         <script
                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8592906361390983"
