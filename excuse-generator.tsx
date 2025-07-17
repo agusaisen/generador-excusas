@@ -427,7 +427,7 @@ export default function ExcuseGenerator() {
           <p
             className={cn("text-sm", darkMode ? "text-slate-400 border-slate-700" : "text-slate-500 border-slate-200")}
           >
-            💡 Úsalo con responsabilidad y humor
+            💡 Usalo con responsabilidad y humor
           </p>
 
           <div className="flex items-center">
