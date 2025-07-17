@@ -35,7 +35,7 @@ const excusasPorNivel = {
     "Tuve que ir al médico por un dolor repentino",
     "Me quedé esperando un paquete que tenía que firmar en persona",
     "Hubo un problema con el gas en mi edificio y no podía salir",
-   "Estuve en el banco más tiempo de lo previsto por problemas en el sistema",
+    "Estuve en el banco más tiempo de lo previsto por problemas en el sistema",
     "Mi hijo se enfermó de repente y tuve que asistirlo",
     "Mi vecino bloqueó mi auto con su camioneta y no estaba en casa",
     "Me confundí de hora porque mi calendario estaba mal configurado",
@@ -227,9 +227,8 @@ export default function ExcuseGenerator() {
                 fill
                 priority
                 className="object-contain"
-             width={250}
-              height={250}
-            
+                width={250}
+                height={250}
               />
             </div>
           </div>
@@ -282,24 +281,24 @@ export default function ExcuseGenerator() {
           {isGenerating ? "Pensando..." : "¡Dame una excusa!"}
         </Button>
 
-        {/* Resultado con animación */} 
-<div
-  className={cn(
-    "mt-8 p-6 rounded-xl border transition-all duration-300 min-h-[120px]",
-    darkMode ? "bg-slate-700/50 border-slate-600" : "bg-slate-50 border-slate-200",
-    !excusaActual && "opacity-50",
-  )}
->
-  <p
-    className={cn(
-      "text-xl text-center transition-all duration-500",
-      animateExcuse ? "animate-bounce-once" : "",
-      darkMode ? "text-slate-200" : "text-slate-700",
-    )}
-  >
-    {excusaActual || "Tu excusa aparecerá aquí..."}
-  </p>
-</div>
+        {/* Resultado con animación */}
+        <div
+          className={cn(
+            "mt-8 p-6 rounded-xl border transition-all duration-300 min-h-[120px]",
+            darkMode ? "bg-slate-700/50 border-slate-600" : "bg-slate-50 border-slate-200",
+            !excusaActual && "opacity-50",
+          )}
+        >
+          <p
+            className={cn(
+              "text-xl text-center transition-all duration-500",
+              animateExcuse ? "animate-bounce-once" : "",
+              darkMode ? "text-slate-200" : "text-slate-700",
+            )}
+          >
+            {excusaActual || "Tu excusa aparecerá aquí..."}
+          </p>
+        </div>
 
         {/* Botones de acción */}
         <div className="mt-6 flex flex-wrap gap-3 justify-center">
@@ -333,11 +332,18 @@ export default function ExcuseGenerator() {
             WhatsApp
           </Button>
         </div>
-<div className="mt-6 flex flex-wrap gap-3 justify-center">    
-<h3 className={cn("text-lg font-semibold", darkMode ? "text-slate-300" : "text-slate-600")}>
-           ¿Te gustó?           </h3>
-<a href='https://cafecito.app/agusaisen' rel='noopener' target='_blank'><img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
-</div>
+        <div className="mt-6 flex flex-wrap gap-3 justify-center">
+          <h3 className={cn("text-lg font-semibold", darkMode ? "text-slate-300" : "text-slate-600")}>¿Te gustó? </h3>
+          <a href="https://cafecito.app/agusaisen" rel="noreferrer noopener" target="_blank">
+            <img
+              srcSet="https://cdn.cafecito.app/imgs/buttons/button_6.png 1x,
+             https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x,
+             https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x"
+              src="https://cdn.cafecito.app/imgs/buttons/button_6.png"
+              alt="Invitame un café en cafecito.app"
+            />
+          </a>
+        </div>
         {/* Sección para agregar nueva excusa */}
         <div
           className={cn(
@@ -430,16 +436,14 @@ export default function ExcuseGenerator() {
             <Moon className={cn("h-4 w-4 ml-2", darkMode ? "text-indigo-300" : "text-slate-400")} />
           </div>
         </div>
-          <div className="text-center mb-10"></div>
+        <div className="text-center mb-10"></div>
         <div className="text-center mb-10">
           <p className={cn("text-mb", darkMode ? "text-slate-300" : "text-slate-600")}>
             Publicidad que ayuda a mantener este sitio activo:
           </p>
-      </div>
+        </div>
         <div id="container-c71edc91f8cbb4a6b12656ad7c672953"></div>
-        
       </Card>
-     
     </div>
   )
 }
