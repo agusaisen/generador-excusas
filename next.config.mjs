@@ -8,10 +8,12 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    domains: ['cdn.cafecito.app'],
   },
   experimental: {
-    legacyBrowsers: false, // Evita incluir JS para navegadores viejos como IE11
+    serverComponentsExternalPackages: ['nodemailer'],
   },
+  output: 'standalone',
 }
 
 export default nextConfig
