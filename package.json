@@ -17,7 +17,10 @@
     "@radix-ui/react-slider": "latest",
     "@radix-ui/react-slot": "latest",
     "@radix-ui/react-switch": "latest",
+    "@remix-run/react": "latest",
+    "@sveltejs/kit": "latest",
     "@types/nodemailer": "^6.4.14",
+    "@vercel/analytics": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.454.0",
@@ -26,9 +29,12 @@
     "nodemailer": "latest",
     "react": "^18",
     "react-dom": "^18",
+    "svelte": "latest",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vue": "latest",
+    "vue-router": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
