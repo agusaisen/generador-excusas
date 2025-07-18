@@ -95,7 +95,6 @@ const excusasPorNivel = {
     "Perdí 20 minutos intentando abrir una bolsa de papitas",
     "Me senté sobre mis auriculares y tuve que reflexionar sobre mi vida",
     "Mi impresora me amenazó con escupir papel hasta que me fuera",
-
   ],
   caotica: [
     "Me abdujeron aliens... pero me devolvieron porque hablo mucho",
@@ -272,10 +271,26 @@ export default function ExcuseGenerator() {
         {/* Slider para elegir tono */}
         <div className="mb-8">
           <div className="flex justify-between mb-2 text-sm font-medium">
-            <span className={darkMode ? "text-slate-400" : "text-slate-500"}>Suave</span>
-            <span className={darkMode ? "text-slate-400" : "text-slate-500"}>Creativa</span>
-            <span className={darkMode ? "text-slate-400" : "text-slate-500"}>Caótica</span>
+            <div className="text-center">
+              <span className={darkMode ? "text-slate-400" : "text-slate-500"}>Suave</span>
+              <p className={cn("text-xs mt-1", darkMode ? "text-slate-500" : "text-slate-400")}>
+                (creíbles y realistas)
+              </p>
+            </div>
+            <div className="text-center">
+              <span className={darkMode ? "text-slate-400" : "text-slate-500"}>Creativa</span>
+              <p className={cn("text-xs mt-1", darkMode ? "text-slate-500" : "text-slate-400")}>
+                (absurdas pero simpáticas)
+              </p>
+            </div>
+            <div className="text-center">
+              <span className={darkMode ? "text-slate-400" : "text-slate-500"}>Caótica</span>
+              <p className={cn("text-xs mt-1", darkMode ? "text-slate-500" : "text-slate-400")}>
+                (ridículas, imposibles, sin lógica)
+              </p>
+            </div>
           </div>
+
           <Slider
             defaultValue={[0.5]}
             max={1}
@@ -285,6 +300,7 @@ export default function ExcuseGenerator() {
             className={darkMode ? "py-4" : "py-4"}
             name="slider-modo"
           />
+
           <div className="text-center mt-1">
             <span
               className={cn(
